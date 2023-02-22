@@ -1,3 +1,3 @@
-module lab1
+module main-module
 
 go 1.18
