@@ -14,27 +14,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v2
         with:
           go-version: 1.18
 
       - name: Build
-        run: go build -v ./...
+        run: go build -v ./lab1/...
 
       - name: Test
-        run: go test -v ./...
+        run: go test -v ./lab1/...
       
   lint:
     name: lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v2
         with:
           version: latest
           args: --timeout 3m
